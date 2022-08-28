@@ -15,25 +15,30 @@ const generateReadMe = ({
   `This is an auto generated readme file.\n
    Title of this project: ${title}. \n
    License: ${license}\n
-   Table of Contents:
-   ## 1. [Description. ] (#)
-   ## 2. [Usage. ] (#)
-   ## 3. [Installation Instructions] (#)
-   ## 4. [Test Instructions] (#)
-   ## 5. [Contributors] (#)
-   ## 6. [Questions] (#)
+   ###Table of Contents:\n
+   ** 1. [Description](#description)**\n
+   ** 2. [Usage](#usage)**\n
+   ** 3. [Installation Instructions](#insallation)**\n
+   ** 4. [Test Instructions](#instructions)**\n
+   ** 5. [Contributors](#contributors)**\n
+   ** 6. [Questions](#questions)**\n
 
-   Description of project: ${description}. \n
+   ## Description
+    ${description} \n
+
+    ## Usage 
+    ${usage}\n
   
-   Intallation Instructions: ${installation}\n
+   ## Intallation 
+    ${installation}\n
 
-   Usage information: ${usage}\n
-   
-   Test instructions: ${tests}\n
+  ## Instructions
+   ${tests}\n
 
-   Contributors: ${contributors}\n
-   
-   Questions?: \n
+  ## Contributors
+   ${contributors}\n
+
+   ## Questions 
    GitHub: \n
    https://github.com/${github}\n
    Email me at: \n

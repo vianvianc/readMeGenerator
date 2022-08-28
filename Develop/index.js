@@ -3,15 +3,46 @@ const fs = require("fs");
 const generateReadMe = ({
   title,
   description,
-  TOC,
+  table,
   installation,
   usage,
   license,
   tests,
   contributors,
   github,
+  email,
 }) =>
-  `This is an auto generated readme file. My name is ${name}. I speak ${languages}. I prefer to be contaced in ${preferred} language`;
+  `This is an auto generated readme file.\n
+   Title of this project: ${title}. \n
+   License: ${license}\n
+   Table of Contents:
+   ## 1. [Description. ] (#)
+   ## 2. [Usage. ] (#)
+   ## 3. [Installation Instructions] (#)
+   ## 4. [Test Instructions] (#)
+   ## 5. [Contributors] (#)
+   ## 6. [Questions] (#)
+
+   Description of project: ${description}. \n
+  
+   Intallation Instructions: ${installation}\n
+
+   Usage information: ${usage}\n
+   
+   Test instructions: ${tests}\n
+
+   Contributors: ${contributors}\n
+   
+   Questions?: \n
+   GitHub: \n
+   https://github.com/${github}\n
+   Email me at: \n
+   ${email}
+
+
+
+
+   `;
 inquirer
   .prompt([
     {
@@ -24,11 +55,7 @@ inquirer
       message: "Description of project: ",
       name: "description",
     },
-    {
-      type: "input",
-      message: "Table of Contents: ",
-      name: "TOC",
-    },
+
     {
       type: "input",
       message: "Describe installation instructions: ",
@@ -40,8 +67,9 @@ inquirer
       name: "usage",
     },
     {
-      type: "input",
+      type: "list",
       message: "What license is used?",
+      choices: ["Apache", "GNU", "MIT"],
       name: "license",
     },
     {
@@ -59,6 +87,11 @@ inquirer
       type: "input",
       message: "What is your github username?",
       name: "github",
+    },
+    {
+      type: "input",
+      message: "What is your email?",
+      name: "email",
     },
   ])
 

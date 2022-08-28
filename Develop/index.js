@@ -1,5 +1,11 @@
 // TODO: Include packages needed for this application
 
+const fs = require("fs");
+
+fs.appendFile("log.txt", `${process.argv[2]}\n`, (err) =>
+  err ? console.error(err) : console.log("Commit logged!")
+);
+
 // TODO: Create an array of questions for user input
 const questions = [];
 

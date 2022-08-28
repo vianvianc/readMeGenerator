@@ -1,11 +1,6 @@
 // TODO: Include packages needed for this application
-
+const inquirer = require("inquirer");
 const fs = require("fs");
-
-fs.appendFile("log.txt", `${process.argv[2]}\n`, (err) =>
-  err ? console.error(err) : console.log("Commit logged!")
-);
-
 // TODO: Create an array of questions for user input
 const questions = [];
 
@@ -17,10 +12,6 @@ function init() {}
 
 // Function call to initialize app
 init();
-
-//from exercise
-const inquirer = require("inquirer");
-const fs = require("fs");
 
 const generateHTML = ({ name, location, github, linkedin }) =>
   `<!DOCTYPE html>
@@ -60,16 +51,6 @@ inquirer
     },
     {
       type: "input",
-      name: "hobby",
-      message: "What is your favorite hobby?",
-    },
-    {
-      type: "input",
-      name: "food",
-      message: "What is your favorite food?",
-    },
-    {
-      type: "input",
       name: "github",
       message: "Enter your GitHub Username",
     },
@@ -80,9 +61,16 @@ inquirer
     },
   ])
   .then((answers) => {
+    console.log(answers);
     const htmlPageContent = generateHTML(answers);
 
     fs.writeFile("index.html", htmlPageContent, (err) =>
       err ? console.log(err) : console.log("Successfully created index.html!")
     );
   });
+
+//   const fs = require("fs");
+
+// fs.appendFile("log.txt", `${process.argv[2]}\n`, (err) =>
+//   err ? console.error(err) : console.log("Commit logged!")
+// );
